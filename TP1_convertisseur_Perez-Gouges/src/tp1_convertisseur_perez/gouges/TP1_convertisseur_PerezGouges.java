@@ -4,17 +4,37 @@
  */
 package tp1_convertisseur_perez.gouges;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mathis
  */
 public class TP1_convertisseur_PerezGouges {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Saisissez une valeur en degrés Celsius : ");
+        double tC = sc.nextDouble();
+       
+        System.out.println(tC + " °C = " + CelciusVersFarenheit(tC) + " °F");
+
+        double tK = CelciusVersKelvin(tC);
+        System.out.println(tK + " K = " + KelvinVersCelcius(tK) + " °C");
+        System.out.println(tK + " K = " + KelvinVersFarenheit(tK) + " °F");
+
+        double tF = CelciusVersFarenheit(tC);
+        System.out.println(tF + " °F = " + FarenheitVersCelcius(tF) + " °C");
+        System.out.println(tF + " °F = " + FarenheitVersKelvin(tF) + " K");
+
+        sc.close();
     }
-    
+
+    public static double CelciusVersKelvin(double tC) { return tC + 273.15; }
+    public static double KelvinVersCelcius(double tK) { return tK - 273.15; }
+    public static double FarenheitVersCelcius(double tF) { return (tF - 32) * 5 / 9; }
+    public static double CelciusVersFarenheit(double tC) { return tC * 9 / 5 + 32; }
+    public static double KelvinVersFarenheit(double tK) { return CelciusVersFarenheit(KelvinVersCelcius(tK)); }
+    public static double FarenheitVersKelvin(double tF) { return CelciusVersKelvin(FarenheitVersCelcius(tF)); }
 }

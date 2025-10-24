@@ -16,20 +16,50 @@ public class TP1_convertisseur_PerezGouges {
         Scanner sc = new Scanner(System.in);
         
         System.out.print("Saisissez une valeur en degrés Celsius : ");
-        double tC = sc.nextDouble();
+        double valeur = sc.nextDouble();
        
-        System.out.println(tC + " °C = " + CelciusVersFarenheit(tC) + " °F");
-
-        double tK = CelciusVersKelvin(tC);
-        System.out.println(tK + " K = " + KelvinVersCelcius(tK) + " °C");
-        System.out.println(tK + " K = " + KelvinVersFarenheit(tK) + " °F");
-
-        double tF = CelciusVersFarenheit(tC);
-        System.out.println(tF + " °F = " + FarenheitVersCelcius(tF) + " °C");
-        System.out.println(tF + " °F = " + FarenheitVersKelvin(tF) + " K");
+        System.out.println("Saisir la conversion qu'il faut faire :");
+        System.out.println("1｜1 C a K");
+        System.out.println("2｜K a C");
+        System.out.println("3｜F a C");
+        System.out.println("4｜C a F");
+        System.out.println("5｜K a F");
+        System.out.println("6｜F a K");
+        
+        int choix = sc.nextInt();
+        double resultat;
+        
+        if (choix == 1){
+            resultat = CelciusVersKelvin(valeur);
+            System.out.println(valeur + " °C = " + resultat + " K");
+        } 
+        else if (choix == 2){
+            resultat = KelvinVersCelcius(valeur);
+            System.out.println(valeur + " K = " + resultat + " °C");        
+        } 
+        else if (choix == 3) {
+            resultat = FarenheitVersCelcius(valeur);
+            System.out.println(valeur + " °F = " + resultat + " °C");
+        } 
+        else if (choix == 4) {
+            resultat = CelciusVersFarenheit(valeur);
+            System.out.println(valeur + " °C = " + resultat + " °F");
+        } 
+        else if (choix == 5) {
+            resultat = KelvinVersFarenheit(valeur);
+            System.out.println(valeur + " K = " + resultat + " °F");
+        } 
+        else if (choix == 6) {
+            resultat = FarenheitVersKelvin(valeur);
+            System.out.println(valeur + " °F = " + resultat + " K");
+        } 
+        else {
+            System.out.println("Choix invalide !");
+        }
 
         sc.close();
     }
+
 
     public static double CelciusVersKelvin(double tC) { return tC + 273.15; }
     public static double KelvinVersCelcius(double tK) { return tK - 273.15; }

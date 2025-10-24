@@ -4,6 +4,8 @@
  */
 package tp0_calculette;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mathis
@@ -14,7 +16,7 @@ public class TP0_calculette {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+    Scanner sc = new Scanner(System.in);
     System.out.println("Please enter the operator: \n 1) add \n 2) substract \n 3) multiply \n 4) divide \n 5) modulo");
     System.out.print("Enter a number corresponding to the operator: ");
         int operateur = sc.nextInt();
@@ -28,24 +30,25 @@ public class TP0_calculette {
         
         
     if (operateur == 1) { // addition
-        System.out.println("Result: " + (operande1 + operande2));
+        System.out.println("Resultat: " + (operande1 + operande2));
     } else if (operateur == 2) { // soustraction
-        System.out.println("Result: " + (operande1 - operande2));
+        System.out.println("Resultat: " + (operande1 - operande2));
     } else if (operateur == 3) { // multiplication
-        System.out.println("Result: " + (operande1 * operande2));
+        System.out.println("Resultat: " + (operande1 * operande2));
     } else if (operateur == 4) { // division
         if (operande2 != 0) {
-            System.out.println("Result: " + ((double) operande1 / operande2));
+            System.out.println("Resultat: " + ((double) operande1 / operande2));
         } else {
-            System.out.println("Error: Division by zero!");
+            System.out.println("Erreur: Division par zero");
         }
     } else if (operateur == 5) { // modulo
         if (operande2 != 0) {
-            System.out.println("Result: " + (operande1 % operande2));
+            System.out.println("Resultat: " + (operande1 % operande2));
         } else {
-            System.out.println("Error: Modulo by zero!");
+            System.out.println("Erreur: Modulo par zero");
         }
     } else {
-        System.out.println("Error: Invalid operator selection!");
+        System.out.println("Erreur: mauavis operateur");
+}
 }
 }

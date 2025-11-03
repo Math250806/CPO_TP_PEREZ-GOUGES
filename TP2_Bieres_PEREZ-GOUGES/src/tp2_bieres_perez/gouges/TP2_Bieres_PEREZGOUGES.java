@@ -15,13 +15,20 @@ public class TP2_Bieres_PEREZGOUGES {
      */
     public static void main(String[] args) {
 
-        // Création d'une bière avec le constructeur 3 paramètres
+        // Création de quelques bières
         BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls", 7.0, "Dubuisson");
-        uneBiere.lireEtiquette();
-
-        // Création d'une seconde bière
         BouteilleBiere secondeBiere = new BouteilleBiere("Leffe", 6.6, "Abbaye de Leffe");
-        secondeBiere.lireEtiquette();
+        BouteilleBiere troisiemeBiere = new BouteilleBiere("Chimay Bleue", 9.0, "Abbaye de Scourmont");
+
+        // Décapsulage
+        uneBiere.decapsuler();       // passe ouverte = true
+        secondeBiere.decapsuler();   // passe ouverte = true
+        troisiemeBiere.decapsuler(); // passe ouverte = true
+        troisiemeBiere.decapsuler(); // affichera "Erreur : bière déjà ouverte"
+
+        // Affichage avec toString()
+        System.out.println(uneBiere);
+        System.out.println(secondeBiere);
+        System.out.println(troisiemeBiere);
     }
-}
-}
+   }

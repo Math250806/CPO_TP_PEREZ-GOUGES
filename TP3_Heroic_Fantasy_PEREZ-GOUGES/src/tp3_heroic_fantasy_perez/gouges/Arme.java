@@ -36,17 +36,3 @@ public abstract class Arme {
         return nom + " (Niveau d'attaque : " + niveauAttaque + ")";
     }
 }
-
-// Classe Epee qui hérite de Arme
-public class Epee extends Arme {
-    public Epee(String nom, int niveauAttaque) {
-        super(nom, niveauAttaque);
-    }
-}
-
-// Classe Baton qui hérite de Arme
-public class Baton extends Arme {
-    public Baton(String nom, int niveauAttaque) {
-        super(nom, niveauAttaque);
-    }
-}

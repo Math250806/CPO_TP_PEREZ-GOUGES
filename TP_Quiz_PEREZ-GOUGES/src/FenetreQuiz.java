@@ -20,29 +20,74 @@ public class FenetreQuiz extends javax.swing.JFrame {
     
     private java.util.ArrayList<Question> listeQuestions;
     private int indexQuestionCourante = 0;
+    
+    private void afficherQuestionCourante() {
+    Question question = listeQuestions.get(indexQuestionCourante);
 
+    jLabel1.setText(question.getIntitule());
+    jButton1.setText(question.getProposition1());
+    jButton2.setText(question.getProposition2());
+    jButton3.setText(question.getProposition3());
+    jButton4.setText(question.getProposition4());
+
+    jButton1.setEnabled(true);
+    jButton2.setEnabled(true);
+    jButton3.setEnabled(true);
+    jButton4.setEnabled(true);
+
+    jLabel2.setText("");  // efface le feedback
+    jLabel4.setText("Score : " + compteur); // affiche score
+}
+private void verifierReponse(int numeroBouton) {
+    Question question = listeQuestions.get(indexQuestionCourante);
+
+    if (numeroBouton == question.getIndexBonneReponse()) {
+        compteur++;
+        jLabel2.setText("Bonne réponse !");
+    } else {
+        jLabel2.setText("Mauvaise réponse !");
+    }
+
+    jButton1.setEnabled(false);
+    jButton2.setEnabled(false);
+    jButton3.setEnabled(false);
+    jButton4.setEnabled(false);
+    jLabel4.setText("Score : " + compteur);
+}
     /**
      * Creates new form FenetreQuiz
      */
     
     public FenetreQuiz() {
         initComponents();
-        chargerQuestion();
+        compteur = 0;  // initialisation du score
+    indexQuestionCourante = 0; // première question
+
+    // Création et ajout des questions
+    listeQuestions = new java.util.ArrayList<>();
+    listeQuestions.add(new Question("Quelle est la capitale de l'Italie ?", "Rome", "Paris", "Madrid", "Berlin", 1));
+    listeQuestions.add(new Question("Combien font 4 × 5 ?", "10", "20", "25", "30", 2));
+    listeQuestions.add(new Question("Quelle planète est connue comme la planète rouge ?", "Venus", "Mars", "Jupiter", "Saturne", 2));
+    listeQuestions.add(new Question("Quelle langue est parlée au Brésil ?", "Espagnol", "Portugais", "Français", "Anglais", 2));
+    listeQuestions.add(new Question("Quel est l’élément chimique de symbole O ?", "Oxygène", "Or", "Osmium", "Oganesson", 1));
+
+    // Afficher la première question
+    afficherQuestionCourante();
         
     }
     private void chargerQuestion() {
-        jLabel1.setText(question);
+        jLabel1.setText(question);  // variable toujours "Quelle est la capitale de l'Italie ?"
 
-        jButton1.setText(propositions[0]);
-        jButton2.setText(propositions[1]);
-        jButton3.setText(propositions[2]);
-        jButton4.setText(propositions[3]);
+    jButton1.setText(propositions[0]);
+    jButton2.setText(propositions[1]);
+    jButton3.setText(propositions[2]);
+    jButton4.setText(propositions[3]);
 
-        jLabel2.setText(""); // Feedback
-        jLabel4.setText("Score : " + compteur);
+    jLabel2.setText(""); // Feedback
+    jLabel4.setText("Score : " + compteur);
 
-        activerBoutons(true);
-    }
+    activerBoutons(true);
+}
     
     private void activerBoutons(boolean etat) {
         jButton1.setEnabled(etat);
@@ -50,20 +95,6 @@ public class FenetreQuiz extends javax.swing.JFrame {
         jButton3.setEnabled(etat);
         jButton4.setEnabled(etat);
     }
-
-    // ====== AJOUT : méthode de vérification ======
-    private void verifierReponse(int numeroBouton) {
-        if (numeroBouton == bonneReponse) {
-            compteur++;
-            jLabel2.setText("Bonne réponse !");
-        } else {
-            jLabel2.setText("Mauvaise réponse !");
-        }
-
-        jLabel4.setText("Score : " + compteur);
-        activerBoutons(false);
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -192,36 +223,44 @@ public class FenetreQuiz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        chargerQuestion();
-    }//GEN-LAST:event_jButton5ActionPerformed
-    private void jButtonQuestionSuivActionPerformed(java.awt.event.ActionEvent evt) {
-        chargerQuestion();
+    indexQuestionCourante++;
+    if (indexQuestionCourante < listeQuestions.size()) {
+        afficherQuestionCourante();
+    } else {
+        jLabel1.setText("Fin du quiz !");
+        jLabel2.setText("Score final : " + compteur + " / " + listeQuestions.size());
+        jButton1.setEnabled(false);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
+        jButton4.setEnabled(false);
+        jButton5.setEnabled(false); // plus de questions
     }
+}    }//GEN-LAST:event_jButton5ActionPerformed
+  
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+   public static void main(String args[]) {
+    /* Set the Nimbus look and feel */
+    try {
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            if ("Nimbus".equals(info.getName())) {
+                javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                break;
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FenetreQuiz().setVisible(true));
+    } catch (Exception ex) {
+        java.util.logging.Logger.getLogger(FenetreQuiz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
 
+    /* Create and display the form */
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            FenetreQuiz fenetre = new FenetreQuiz();
+            fenetre.setVisible(true);
+        }
+    });
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -233,3 +272,4 @@ public class FenetreQuiz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
+

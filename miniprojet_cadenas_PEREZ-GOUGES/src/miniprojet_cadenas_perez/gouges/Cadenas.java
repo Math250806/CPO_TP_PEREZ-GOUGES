@@ -16,64 +16,21 @@ public class Cadenas extends javax.swing.JFrame {
     /**
      * Creates new form AffichageJeu
      */
+    public Cadenas() {
+            initComponents();
+
+    }
+
     
-    Cadenas jeu = new Cadenas();
+    
+    
+    CadenasJeu jeu = new CadenasJeu();
 
     int chiffre1 = 0;
     int chiffre2 = 0;
     int chiffre3 = 0;
     int chiffre4 = 0;
     
-    public class Cadenas {
-
-    private int[] codeSecret = new int[4];
-    private int tentatives;
-    private final int MAX_TENTATIVES = 5;
-
-    public Cadenas() {
-        reset();
-    }
-
-    private void genererCodeSecret() {
-        for (int i = 0; i < 4; i++) {
-            codeSecret[i] = (int)(Math.random() * 10);
-        }
-    }
-
-    public int[] tester(int[] prop) {
-
-        tentatives++;
-
-        int nbExacts = 0;
-        int nbHauts = 0;
-        int nbBas = 0;
-
-        for (int i = 0; i < 4; i++) {
-            if (prop[i] == codeSecret[i]) {
-                nbExacts++;
-            } else if (prop[i] > codeSecret[i]) {
-                nbHauts++;
-            } else {
-                nbBas++;
-            }
-        }
-
-        return new int[]{nbExacts, nbHauts, nbBas};
-    }
-
-    public void reset() {
-        tentatives = 0;
-        genererCodeSecret();
-    }
-
-    public int getTentatives() {
-        return tentatives;
-    }
-
-    public int getMaxTentatives() {
-        return MAX_TENTATIVES;
-    }
-}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -222,7 +179,7 @@ public class Cadenas extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(up_chiffre_4))
                                     .addComponent(jLabel13))
-                                .addContainerGap(76, Short.MAX_VALUE))
+                                .addContainerGap(121, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -293,7 +250,7 @@ public class Cadenas extends javax.swing.JFrame {
                                     .addComponent(down_chiffre_2)
                                     .addComponent(down_chiffre_3)
                                     .addComponent(down_chiffre_4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel6)
@@ -355,7 +312,7 @@ public class Cadenas extends javax.swing.JFrame {
     }//GEN-LAST:event_down_chiffre_4ActionPerformed
 
     private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
-         jeu.reset();
+    jeu.reset();
 
     chiffre1 = 0; chiffre2 = 0; chiffre3 = 0; chiffre4 = 0;
 
@@ -364,41 +321,33 @@ public class Cadenas extends javax.swing.JFrame {
     jLabel3.setText("0");
     jLabel4.setText("0");
 
-    texte_nb_chiffres_exacts.setText("0");
-    texte_nb_chiffres_haut.setText("0");
-    texte_nb_chiffres_bas.setText("0");
+    //texte_nb_chiffres_exacts.setText("0");
+   // texte_nb_chiffres_haut.setText("0");
+    //texte_nb_chiffres_bas.setText("0");
 
-    texte_tentatives.setText("0 sur 5");
+    //texte_tentatives.setText("0 sur 5");
     }//GEN-LAST:event_bouton_recommencerActionPerformed
 
     private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
-        int[] prop = {chiffre1, chiffre2, chiffre3, chiffre4};
+    int[] prop = {chiffre1, chiffre2, chiffre3, chiffre4};
 
     int[] resultat = jeu.tester(prop);
 
-    // Récupération
     int nbExacts = resultat[0];
     int nbHauts  = resultat[1];
     int nbBas    = resultat[2];
-
-    // Affichage dans ton interface
+/*
     texte_nb_chiffres_exacts.setText("" + nbExacts);
     texte_nb_chiffres_haut.setText("" + nbHauts);
     texte_nb_chiffres_bas.setText("" + nbBas);
 
     texte_tentatives.setText(jeu.getTentatives() + " sur " + jeu.getMaxTentatives());
+    */
     }//GEN-LAST:event_bouton_testerActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-    java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
-            new FenetreJeu().setVisible(true);
-        }
-    });
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bouton_recommencer;

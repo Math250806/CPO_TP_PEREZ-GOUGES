@@ -98,25 +98,25 @@ public class Cadenas extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         up_chiffre_3 = new javax.swing.JButton();
         up_chiffre_4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        bouton_recommencer = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         down_chiffre_1 = new javax.swing.JButton();
         down_chiffre_2 = new javax.swing.JButton();
         down_chiffre_3 = new javax.swing.JButton();
         down_chiffre_4 = new javax.swing.JButton();
+        bouton_tester = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("0");
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("0");
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("0");
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("0");
 
         up_chiffre_1.setText("/\\");
             up_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
@@ -132,76 +132,103 @@ public class Cadenas extends javax.swing.JFrame {
                     }
                 });
 
-                jLabel5.setText("jLabel5");
+                jLabel5.setText("Nb chiffres exacts :");
 
-                jLabel6.setText("jLabel6");
+                jLabel6.setText("0");
 
-                jLabel7.setText("jLabel7");
+                jLabel7.setText("Nb chiffres trop hauts :");
 
-                jLabel8.setText("jLabel8");
+                jLabel8.setText("Nb chiffres trop bas :");
 
-                jLabel9.setText("jLabel9");
+                jLabel9.setText("0");
 
-                jLabel10.setText("jLabel10");
+                jLabel10.setText("0");
 
                 up_chiffre_3.setText("/\\");
+                    up_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            up_chiffre_3ActionPerformed(evt);
+                        }
+                    });
 
                     up_chiffre_4.setText("/\\");
+                        up_chiffre_4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                up_chiffre_4ActionPerformed(evt);
+                            }
+                        });
 
-                        jButton5.setText("jButton5");
+                        bouton_recommencer.setText("Recommencer");
+                        bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                bouton_recommencerActionPerformed(evt);
+                            }
+                        });
 
-                        jLabel11.setText("jLabel11");
+                        jLabel11.setText("0 sur 5");
 
-                        jLabel12.setText("jLabel12");
+                        jLabel12.setText("Tentatives");
 
-                        jLabel13.setText("jLabel13");
-
-                        jLabel14.setText("jLabel14");
+                        jLabel13.setText("Trouve le code bueno en moins de 5 try 🫆");
 
                         down_chiffre_1.setText("\\/");
+                        down_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_1ActionPerformed(evt);
+                            }
+                        });
 
                         down_chiffre_2.setText("\\/");
+                        down_chiffre_2.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_2ActionPerformed(evt);
+                            }
+                        });
 
                         down_chiffre_3.setText("\\/");
+                        down_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_3ActionPerformed(evt);
+                            }
+                        });
 
                         down_chiffre_4.setText("\\/");
+                        down_chiffre_4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_4ActionPerformed(evt);
+                            }
+                        });
+
+                        bouton_tester.setText("Tester");
+                        bouton_tester.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                bouton_testerActionPerformed(evt);
+                            }
+                        });
 
                         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                         getContentPane().setLayout(layout);
                         layout.setHorizontalGroup(
                             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(up_chiffre_1)
+                                .addGap(7, 7, 7)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(up_chiffre_1)
-                                        .addGap(7, 7, 7)
                                         .addComponent(up_chiffre_2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(up_chiffre_3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(up_chiffre_4)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel14))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(25, 25, 25)
-                                        .addComponent(jLabel1)
-                                        .addGap(42, 42, 42)
-                                        .addComponent(jLabel2)
-                                        .addGap(42, 42, 42)
-                                        .addComponent(jLabel3)
-                                        .addGap(34, 34, 34)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel12))))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(up_chiffre_4))
+                                    .addComponent(jLabel13))
+                                .addContainerGap(76, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel10))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel7)
@@ -212,53 +239,65 @@ public class Cadenas extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel6)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton5))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(157, 157, 157)
-                                        .addComponent(jLabel13))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(down_chiffre_1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(down_chiffre_2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(down_chiffre_3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(down_chiffre_4)))
+                                    .addComponent(bouton_recommencer, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel11)
+                                            .addComponent(jLabel12))
+                                        .addGap(27, 27, 27))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addGap(71, 71, 71)
+                                .addComponent(jLabel3)
+                                .addGap(70, 70, 70)
+                                .addComponent(jLabel4)
+                                .addGap(46, 46, 46)
+                                .addComponent(bouton_tester)
+                                .addGap(7, 7, 7))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(down_chiffre_1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(down_chiffre_2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(down_chiffre_3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(down_chiffre_4)
                                 .addGap(0, 0, Short.MAX_VALUE))
                         );
                         layout.setVerticalGroup(
                             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
+                                .addGap(34, 34, 34)
                                 .addComponent(jLabel13)
-                                .addGap(63, 63, 63)
+                                .addGap(64, 64, 64)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(up_chiffre_1)
                                     .addComponent(up_chiffre_2)
                                     .addComponent(up_chiffre_3)
-                                    .addComponent(up_chiffre_4)
-                                    .addComponent(jLabel14))
+                                    .addComponent(up_chiffre_4))
                                 .addGap(1, 1, 1)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
+                                    .addComponent(jLabel4)
+                                    .addComponent(bouton_tester))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(down_chiffre_1)
                                     .addComponent(down_chiffre_2)
                                     .addComponent(down_chiffre_3)
                                     .addComponent(down_chiffre_4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel6))
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel12))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel7)
@@ -268,7 +307,7 @@ public class Cadenas extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel10)
-                                    .addComponent(jButton5))
+                                    .addComponent(bouton_recommencer))
                                 .addGap(19, 19, 19))
                         );
 
@@ -276,50 +315,103 @@ public class Cadenas extends javax.swing.JFrame {
                     }// </editor-fold>//GEN-END:initComponents
 
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
-        // TODO add your handling code here:
+        chiffre1 = (chiffre1 + 1) % 10;
+        jLabel1.setText("" + chiffre1);
     }//GEN-LAST:event_up_chiffre_1ActionPerformed
 
     private void up_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_2ActionPerformed
-        // TODO add your handling code here:
+        chiffre2 = (chiffre2 + 1) % 10;
+        jLabel2.setText("" + chiffre2);
     }//GEN-LAST:event_up_chiffre_2ActionPerformed
+
+    private void up_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_3ActionPerformed
+        chiffre3 = (chiffre3 + 1) % 10;
+        jLabel3.setText("" + chiffre3);
+    }//GEN-LAST:event_up_chiffre_3ActionPerformed
+
+    private void up_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_4ActionPerformed
+        chiffre4 = (chiffre4 + 1) % 10;
+        jLabel4.setText("" + chiffre4);
+    }//GEN-LAST:event_up_chiffre_4ActionPerformed
+
+    private void down_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_1ActionPerformed
+        chiffre1 = (chiffre1 + 9) % 10;
+        jLabel1.setText("" + chiffre1);
+    }//GEN-LAST:event_down_chiffre_1ActionPerformed
+
+    private void down_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_2ActionPerformed
+        chiffre2 = (chiffre2 + 9) % 10;
+        jLabel2.setText("" + chiffre2);
+    }//GEN-LAST:event_down_chiffre_2ActionPerformed
+
+    private void down_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_3ActionPerformed
+        chiffre3 = (chiffre3 + 9) % 10;
+        jLabel3.setText("" + chiffre3);
+    }//GEN-LAST:event_down_chiffre_3ActionPerformed
+
+    private void down_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_4ActionPerformed
+        chiffre4 = (chiffre4 + 9) % 10;
+        jLabel4.setText("" + chiffre4);
+    }//GEN-LAST:event_down_chiffre_4ActionPerformed
+
+    private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
+         jeu.reset();
+
+    chiffre1 = 0; chiffre2 = 0; chiffre3 = 0; chiffre4 = 0;
+
+    jLabel1.setText("0");
+    jLabel2.setText("0");
+    jLabel3.setText("0");
+    jLabel4.setText("0");
+
+    texte_nb_chiffres_exacts.setText("0");
+    texte_nb_chiffres_haut.setText("0");
+    texte_nb_chiffres_bas.setText("0");
+
+    texte_tentatives.setText("0 sur 5");
+    }//GEN-LAST:event_bouton_recommencerActionPerformed
+
+    private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
+        int[] prop = {chiffre1, chiffre2, chiffre3, chiffre4};
+
+    int[] resultat = jeu.tester(prop);
+
+    // Récupération
+    int nbExacts = resultat[0];
+    int nbHauts  = resultat[1];
+    int nbBas    = resultat[2];
+
+    // Affichage dans ton interface
+    texte_nb_chiffres_exacts.setText("" + nbExacts);
+    texte_nb_chiffres_haut.setText("" + nbHauts);
+    texte_nb_chiffres_bas.setText("" + nbBas);
+
+    texte_tentatives.setText(jeu.getTentatives() + " sur " + jeu.getMaxTentatives());
+    }//GEN-LAST:event_bouton_testerActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            new FenetreJeu().setVisible(true);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Cadenas().setVisible(true));
-    }
+    });
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bouton_recommencer;
+    private javax.swing.JButton bouton_tester;
     private javax.swing.JButton down_chiffre_1;
     private javax.swing.JButton down_chiffre_2;
     private javax.swing.JButton down_chiffre_3;
     private javax.swing.JButton down_chiffre_4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

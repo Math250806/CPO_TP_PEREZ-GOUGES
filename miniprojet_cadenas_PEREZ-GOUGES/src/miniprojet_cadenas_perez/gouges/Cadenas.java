@@ -170,15 +170,17 @@ public class Cadenas extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(up_chiffre_1)
-                                .addGap(7, 7, 7)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(jLabel13))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(up_chiffre_2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(up_chiffre_3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(up_chiffre_4))
-                                    .addComponent(jLabel13))
+                                        .addComponent(up_chiffre_4)))
                                 .addContainerGap(121, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
@@ -199,20 +201,20 @@ public class Cadenas extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(bouton_recommencer, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel12))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel12)
+                                            .addComponent(jLabel11))
                                         .addGap(27, 27, 27))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(39, 39, 39)
                                 .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(71, 71, 71)
                                 .addComponent(jLabel2)
                                 .addGap(71, 71, 71)
                                 .addComponent(jLabel3)
-                                .addGap(70, 70, 70)
+                                .addGap(71, 71, 71)
                                 .addComponent(jLabel4)
-                                .addGap(46, 46, 46)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(bouton_tester)
                                 .addGap(7, 7, 7))
                             .addGroup(layout.createSequentialGroup()
@@ -255,11 +257,15 @@ public class Cadenas extends javax.swing.JFrame {
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel12))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel11))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel9)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(8, 8, 8)
+                                        .addComponent(jLabel11)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel8)
@@ -321,11 +327,10 @@ public class Cadenas extends javax.swing.JFrame {
     jLabel3.setText("0");
     jLabel4.setText("0");
 
-    //texte_nb_chiffres_exacts.setText("0");
-   // texte_nb_chiffres_haut.setText("0");
-    //texte_nb_chiffres_bas.setText("0");
-
-    //texte_tentatives.setText("0 sur 5");
+    jLabel6.setText("0");
+    jLabel9.setText("0");
+    jLabel10.setText("0");
+    jLabel11.setText("0 sur 5");
     }//GEN-LAST:event_bouton_recommencerActionPerformed
 
     private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
@@ -336,13 +341,14 @@ public class Cadenas extends javax.swing.JFrame {
     int nbExacts = resultat[0];
     int nbHauts  = resultat[1];
     int nbBas    = resultat[2];
-/*
-    texte_nb_chiffres_exacts.setText("" + nbExacts);
-    texte_nb_chiffres_haut.setText("" + nbHauts);
-    texte_nb_chiffres_bas.setText("" + nbBas);
 
-    texte_tentatives.setText(jeu.getTentatives() + " sur " + jeu.getMaxTentatives());
-    */
+    // Mettre à jour l'affichage :
+    jLabel6.setText("" + nbExacts);  
+    jLabel9.setText("" + nbHauts);   
+    jLabel10.setText("" + nbBas);    
+
+    jLabel11.setText(jeu.getTentatives() + " sur " + jeu.getMaxTentatives());
+    
     }//GEN-LAST:event_bouton_testerActionPerformed
 
     /**

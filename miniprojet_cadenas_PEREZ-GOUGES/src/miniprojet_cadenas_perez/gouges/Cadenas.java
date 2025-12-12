@@ -24,8 +24,9 @@ public class Cadenas extends javax.swing.JFrame {
     
     
     
-    CadenasJeu jeu = new CadenasJeu();
-
+    public CadenasJeu jeu = new CadenasJeu();
+    
+    
     int chiffre1 = 0;
     int chiffre2 = 0;
     int chiffre3 = 0;
@@ -349,6 +350,20 @@ public class Cadenas extends javax.swing.JFrame {
 
     jLabel11.setText(jeu.getTentatives() + " sur " + jeu.getMaxTentatives());
     
+    // Vérifier si le joueur a gagné
+    if (nbExacts == 4) {
+    int[] code = jeu.getCodeSecret();
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "Bravo ! Le code était : " + code[0] + code[1] + code[2] + code[3]);
+    return;
+}
+
+    // Vérifier si le joueur a perdu
+    if (jeu.getTentatives() >= jeu.getMaxTentatives()) {
+    int[] code = jeu.getCodeSecret();
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "Dommage ! Le code était : " + code[0] + code[1] + code[2] + code[3]);
+}
     }//GEN-LAST:event_bouton_testerActionPerformed
 
     /**

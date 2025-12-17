@@ -37,7 +37,7 @@ public class GrilleDeCellules {
      */
     public void activerLigneDeCellules(int idLigne) {
         for (int j = 0; j < taille; j++) {
-            matriceCellules[idLigne][j].changerEtat();
+            matriceCellules[idLigne][j].activerCellule();
         }
     }
 
@@ -46,7 +46,7 @@ public class GrilleDeCellules {
      */
     public void activerColonneDeCellules(int idColonne) {
         for (int i = 0; i < taille; i++) {
-            matriceCellules[i][idColonne].changerEtat();
+            matriceCellules[i][idColonne].activerCellule();
         }
     }
 
@@ -55,7 +55,7 @@ public class GrilleDeCellules {
      */
     public void activerDiagonaleDescendante() {
         for (int i = 0; i < taille; i++) {
-            matriceCellules[i][i].changerEtat();
+            matriceCellules[i][i].activerCellule();
         }
     }
 
@@ -64,7 +64,7 @@ public class GrilleDeCellules {
      */
     public void activerDiagonaleMontante() {
         for (int i = 0; i < taille; i++) {
-            matriceCellules[i][taille - 1 - i].changerEtat();
+            matriceCellules[i][taille - 1 - i].activerCellule();
         }
     }
 
@@ -98,7 +98,7 @@ public class GrilleDeCellules {
     public boolean estEteinte() {
         for (int i = 0; i < taille; i++) {
             for (int j = 0; j < taille; j++) {
-                if (matriceCellules[i][j].estAllumee()) {
+                if (matriceCellules[i][j].estEteint()) {
                     return false;
                 }
             }
